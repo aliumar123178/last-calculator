@@ -20,7 +20,9 @@
 }
 
 main {
-  width: 400px;
+ width: 90%;
+  max-width: 500px;
+  min-width: 320px;
 }
 
 #header {
@@ -97,18 +99,23 @@ main {
 
 .bluebg-input {
   width: 100%;
-  height: 80px;
-  font-size: 32px;
+  height: 100px;
+  font-size: clamp(24px, 5vw, 42px);
   border-radius: 10px;
   outline: none;
   border: none;
-  padding-inline-start: 10px;
-  padding-inline-end: 10px;
+  padding: 20px;
   background-color: hsl(224, 36%, 15%);
   color: #f3f3f3;
   text-align: right;
   font-family: "League Spartan", sans-serif;
-  transition: 1s background ease-out;
+  overflow-x: auto;
+  white-space: nowrap;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.bluebg-input::-webkit-scrollbar {
+  display: none;
 }
 
 /* later render this using the scss */
@@ -357,17 +364,23 @@ footer {
 
 @media (max-width: 500px) {
   main {
-    width: 300px;
+    width: 95%;
   }
 
   .button {
-    width: 50px;
-    height: auto;
+    width: 60px;
+    height: 50px;
+    font-size: 24px;
   }
 
   .reset,
   .equal {
-    width: auto;
+    font-size: 20px;
+  }
+
+  .bluebg-input {
+    height: 90px;
+    font-size: 36px;
   }
 }
 
